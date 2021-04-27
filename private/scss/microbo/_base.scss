@@ -1,0 +1,57 @@
+html {
+	position: relative;
+    min-height: 100%;
+    
+    body {
+        font-family: $font_family_1 !important;
+        background-color: $background_color_1;
+        min-height: 100vh;
+    
+        &.danger {
+            filter: hue-rotate(162deg);
+        }
+    
+        main {
+            padding-bottom: 120px;
+        }
+    }
+}
+
+
+pre {
+	font-family: "Titillium Web" !important;
+	border-radius: 0!important;
+	background-color: $color_4 !important;
+	color: #BBBFCA;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 300 !important;
+}
+
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.7rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+.main-title {
+    text-transform: uppercase;
+	color: $color_2;    
+    font-size: 1.65rem;
+    line-height: 2rem;
+	margin-bottom: 0;
+
+}
+
+.modal-title {
+    text-transform: uppercase;
+    color: $color_2;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-bottom: .75rem;
+}

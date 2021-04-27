@@ -1,0 +1,23 @@
+section {
+    .title {
+        margin-top: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .content {
+        background-color: #fff;
+        &.card {
+            .card-body {
+                padding: 2rem;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            &:nth-child(n+2) {
+                margin-top: 2rem;
+            }
+        }
+    }
+}

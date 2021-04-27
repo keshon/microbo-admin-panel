@@ -1,0 +1,36 @@
+<!-- Content -->
+<section class="section--json-storage">
+    <div  class="container">
+
+        <div class="title">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h1 class="main-title">JSON Storage</h1>
+                </div>
+
+                <div class="toolbox col-sm-8 d-flex justify-content-sm-end">
+
+                    <div class="dropdown-button" id="select_app_dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle text-uppercase" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            app
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0)">app</a>
+                            <a class="dropdown-item" href="javascript:void(0)">microbo</a>
+                        </div>
+
+                        <input type="hidden" id="select_app" value="app">
+                    </div>
+
+                    <button id="compile_scss" type="button" class="btn btn-primary btn-flex"><span class="spinner-border" style="width: 1rem; height: 1rem; border-width: 2px; margin-right: 0.2rem; display: none;" role="status" aria-hidden="true"></span> Compile SCSS</button>
+                    <button id="compress_js" type="button" class="btn btn-primary btn-flex"><span class="spinner-border" style="width: 1rem; height: 1rem; border-width: 2px; margin-right: 0.2rem; display: none;" role="status" aria-hidden="true"></span> Compress JS</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="jsoneditor"></div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,77 @@
+.btn {
+	border-radius: 0;
+	font-weight: 500;
+	&:not(:disabled) {
+		&:not(.disabled) {
+			&:active {
+				&:focus {
+					box-shadow: 0 0 0 0.2rem #BBBFCA;
+				}
+			}
+		}
+		&:not(.disabled).active {
+			&:focus {
+				box-shadow: 0 0 0 0.2rem #BBBFCA;
+			}
+		}
+	}
+}
+.btn.btn-primary {
+	background-color: $background_color_2;
+	border-color: $border_color_1;
+}
+.btn.btn-flex {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+}
+.btn-primary {
+	&:focus {
+		box-shadow: 0 0 0 0.2rem #BBBFCA;
+	}
+	&:not(:disabled) {
+		&:not(.disabled) {
+			&:active {
+				background-color: $background_color_4;
+				border-color: $border_color_2;
+			}
+		}
+		&:not(.disabled).active {
+			background-color: $background_color_4;
+			border-color: $border_color_2;
+		}
+	}
+	&:active {
+		background-color: $background_color_4;
+		border-color: $border_color_2;
+	}
+}
+.btn-primary.focus {
+	box-shadow: 0 0 0 0.2rem #BBBFCA;
+}
+.btn-primary.active {
+	background-color: $background_color_4;
+	border-color: $border_color_2;
+}
+.d-flex button {
+	white-space: nowrap;
+	height: fit-content;
+}
+.show {
+	>.btn.dropdown-toggle {
+		&:focus {
+			box-shadow: 0 0 0 0.2rem #BBBFCA;
+		}
+	}
+	>.btn-primary.dropdown-toggle {
+		background-color: $background_color_4;
+		border-color: $border_color_2;
+	}
+}
+
+// iPhone 5 (320px)
+@include media-breakpoint-down(ip5) { 
+    .btn {
+        padding: .375rem .35rem;
+    }
+}

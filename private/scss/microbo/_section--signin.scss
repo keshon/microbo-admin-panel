@@ -1,0 +1,40 @@
+.section--signin {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        max-width: 24rem;
+        box-shadow: $box-shadow;
+        margin: auto;
+
+        .card-body {
+            padding: 3rem;
+
+            .logo {
+                margin-bottom: 3rem;
+                svg {
+                    height: 3.125rem;
+                    width: 100%;
+                }
+            }
+
+            .form-control {
+                position: relative;
+                box-sizing: border-box;
+                height: auto;
+                padding: 0.625rem;
+                font-size: 1rem;
+                &:focus {
+                    z-index: 2;
+                }
+        
+                .checkbox {
+                    font-weight: 400;
+                }
+            }
+        }
+
+    }
+}

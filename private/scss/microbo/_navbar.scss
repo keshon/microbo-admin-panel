@@ -1,0 +1,78 @@
+.navbar {
+    padding: 0 0 0 1rem;
+    box-shadow: $box-shadow-high;
+
+    .logo {
+		max-width: 13.75rem;
+		height: 2.25rem;
+    }
+
+    .charts {
+        display: flex;
+        align-self: center;
+        margin-left: 1rem;
+    }
+
+    .navbar-nav {
+        margin-left: auto;
+
+        .nav-item {
+            .nav-link {
+                border-top: 3px solid transparent;
+                border-bottom: 3px solid transparent;
+                padding: 1rem !important;
+                color: $color_1;
+                font-weight: 500;
+                
+                &:hover {
+                    border-top: 3px solid #fff;
+                    background-color: $background_color_3;
+                }
+                &.active {
+                    border-top: 3px solid #fff;
+                    background-color: $background_color_3;
+                }        
+            }
+        }
+    }
+	.divider {
+		border-left: 1px solid #f4f4f26b;
+		height: 2rem;
+		margin: auto;
+	}
+
+    .navbar-toggler {
+        border-radius: 0;
+        margin-left: auto;
+
+        .navbar-toggler-icon {
+            background: url(/media/svg/microbo/menu.svg) no-repeat center;
+            background-size: contain;
+            width: 1.8rem;
+            height: 2rem;
+        }
+    }
+}
+
+// Medium (768px)
+@include media-breakpoint-down(lg) { 
+    .navbar {
+        padding: 0.5rem;
+    }
+}
+
+// iPhone 6,7,8 Plus (414px)
+@include media-breakpoint-down(ip678plus) {
+    .navbar {
+        align-items: flex-start;
+        padding: 0.25rem 0.5rem;
+
+        .navbar-brand {
+            order: -2;
+        }
+        .navbar-toggler {
+            order: -1;
+        }
+    }
+
+}

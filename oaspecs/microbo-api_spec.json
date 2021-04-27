@@ -1,0 +1,304 @@
+{
+  "definitions": {},
+  "info": {
+    "title": "microbo-js",
+    "version": "1.0.0",
+    "license": {
+      "name": "MIT"
+    },
+    "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3)."
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "/",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo": {
+      "get": {
+        "summary": "/microbo",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/signin": {
+      "get": {
+        "summary": "/microbo/signin",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/tpl/{alias}": {
+      "get": {
+        "summary": "/microbo/tpl/{alias}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "alias",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/test-page": {
+      "get": {
+        "summary": "/microbo/test-page",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/compile-scss": {
+      "post": {
+        "summary": "/microbo/api/compile-scss",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/compress-js": {
+      "post": {
+        "summary": "/microbo/api/compress-js",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/compress-js-microbo": {
+      "get": {
+        "summary": "/microbo/api/compress-js-microbo",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/create-json": {
+      "post": {
+        "summary": "/microbo/api/create-json",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/data": {
+      "post": {
+        "summary": "/microbo/api/data",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/update-json": {
+      "post": {
+        "summary": "/microbo/api/update-json",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/delete-json": {
+      "post": {
+        "summary": "/microbo/api/delete-json",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/create-schema": {
+      "post": {
+        "summary": "/microbo/api/create-schema",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/read-schema": {
+      "post": {
+        "summary": "/microbo/api/read-schema",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/create-user": {
+      "post": {
+        "summary": "/microbo/api/create-user",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/update-user": {
+      "post": {
+        "summary": "/microbo/api/update-user",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/microbo/api/auth": {
+      "post": {
+        "summary": "/microbo/api/auth",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "User found"
+                },
+                "redirect": {
+                  "type": "string",
+                  "example": "microbo/#/j"
+                }
+              }
+            }
+          }
+        },
+        "tags": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/microbo/api/logout": {
+      "get": {
+        "summary": "/microbo/api/logout",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "302": {
+            "description": "Found",
+            "schema": {
+              "type": "string",
+              "example": "<p>Found. Redirecting to <a href=\"/microbo/signin\">/microbo/signin</a></p>"
+            }
+          }
+        },
+        "tags": [],
+        "produces": [
+          "text/html"
+        ]
+      }
+    },
+    "/microbo/api/si": {
+      "post": {
+        "summary": "/microbo/api/si",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cpu": {
+                  "type": "null",
+                  "example": null
+                },
+                "mem": {
+                  "type": "number",
+                  "example": 0.3970711093098214
+                },
+                "net_tx": {
+                  "type": "null",
+                  "example": null
+                },
+                "net_rx": {
+                  "type": "null",
+                  "example": null
+                }
+              }
+            }
+          }
+        },
+        "tags": [],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/microbo/api/test": {
+      "get": {
+        "summary": "/microbo/api/test",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    }
+  },
+  "swagger": "2.0",
+  "tags": []
+}

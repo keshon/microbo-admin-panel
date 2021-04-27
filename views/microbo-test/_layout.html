@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>{{ data.settings.app.name }}</title>
+        <base href="{{ data.settings.base_url }}">
+
+        <!---------->
+        <!-- Meta -->
+        <!---------->
+        <meta charset="{{ data.settings.charset }}">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="author" content="{{ data.settings.author }}">
+        <meta property="og:title" content="" />
+        <meta name="twitter:title" content="" />
+
+        <!-------------->
+        <!-- Favicons -->
+        <!-------------->
+
+        <!------------>
+        <!-- Vendor -->
+        <!------------>
+        <!-- Preconnect Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <!-- Fonts and Material Icons -->
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+        <!--------->
+        <!-- App -->
+        <!--------->
+        <!-- Compressed Styles -->
+        <link rel="stylesheet" type="text/css" href="{{ data.settings.microbo.path.style.file | replace('public/','') }}">
+        <!-- Inline Styles  -->
+        <style></style>
+    </head>
+
+    <body class="dev">
+        {% include "microbo-manager/_svg.html" %}
+        <nav class="navbar navbar-light bg-white navbar-expand-lg mb-5 d-flex">
+            <a class="navbar-brand" href="/">
+                <svg class="logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo_dark"></use></svg>
+            </a>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav nav-pills ml-auto mt-3 mb-3 mr-3" id="nav" role="group" aria-label="Basic example">
+                    <li class="nav-item">
+                        <a href="microbo/#/{{ data.settings.microbo.jqrouter.routes[data.settings.microbo.jqrouter.default_route].alias }}" class="btn btn-outline-primary ml-auto">Microbo</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h1 class="h3 text-muted pb-4">MICROBO Test Page</h1>
+            <h5 class="text-muted">App template hierarchy</h5>
+            <div class="bg-white shadow p-4 mb-3">
+                <div class="dev dev--layout">
+                    <code>views/_layout.html</code>
+                    {% include "microbo-test/_svg.html" %}
+                    {% include "microbo-test/_nav.html" %}
+                    {% block content %}{% endblock %}
+                    {% include "microbo-test/_footer.html" %}
+                </div>
+            </div>
+
+            <h5 class="text-muted pt-4">Access to (jinja2-like) template variables examples</h5>
+            <div class="shadow mb-3">
+                <div class="alert alert-info mb-0" role="alert">
+                    You can access any key-value pair from <b>data</b> object via <span class="text-white">&#123;&#123;data.&lt;path&gt;&#125;&#125;</span>
+                </div>
+                <div class="bg-white p-3">
+                    <p>Examples:</p>
+                    <div>
+                        <span class="text-muted">Base url <code>&#123;&#123;data.settings.base_url&#125;&#125;</code>:</span> {{ data.settings.base_url}}<br>
+                        <span class="text-muted">App name <code>&#123;&#123;data.settings.app.name&#125;&#125;</code>:</span> {{ data.settings.app.name}}<br>
+                        <span class="text-muted">PM2 exec mode <code>&#123;&#123;data.settings.pm2.exec_mode&#125;&#125;</code>:</span> {{ data.settings.pm2.exec_mode }}<br>
+                    </div>
+                    <p class="pt-3">and so on...</p>
+                </div>
+            </div>
+
+            <h5 class="text-muted pt-4">Front-end fetched JSON data</h5>
+            <pre id="storage" class="card shadow p-4"></pre>
+
+            <footer class="pt-4 pb-4 text-muted" style="position: relative;">
+                <div class="container text-center">
+                    <small>&copy; 2020 MICROBO - Opinionated Micro Manager by keshon83 (<a href="#">https://keshon.ru</a>)</small>
+                </div>
+            </footer>
+        </div>
+        
+        <!------------>
+        <!-- Vendor -->
+        <!------------>
+        <!-- jQuery 3.4.1 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!--------->
+        <!-- App -->
+        <!--------->
+        <!-- Compressed Scripts -->
+        <script src="{{ data.settings.microbo.path.script.file | replace('public/','') }}" type="text/javascript"></script>
+        <!-- Inline Scripts -->
+        <script>
+            var hash = "{{ hash }}";
+
+            // read data
+            const request = async () => {
+                const response = await fetch('microbo/api/data', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({"hash": hash, "select": "_all", loc: window.location.href})
+                });
+                const data = await response.json();
+                
+                // Home
+                document.getElementById("storage").appendChild(document.createTextNode(JSON.stringify(data, null, 4)));
+            }
+            request();            
+        </script>
+
+    </body>
+</html>
+    

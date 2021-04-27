@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="{{ data.settings.base_url}}">
+
+        <!-- Primary Meta Tags -->
+        <title>{{ data.settings.microbo.name }}</title>
+        <meta name="title" content="MICROBO - opinionated manager for microservices.">
+        <meta name="description" content="Uses JSON files as database. Powered by Express.js, highly biased.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://keshon.ru/microbo">
+        <meta property="og:title" content="MICROBO - opinionated manager for microservices.">
+        <meta property="og:description" content="Uses JSON files as database. Powered by Express.js, highly biased.">
+        <meta property="og:image" content="media/img/microbo/cover.png">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://keshon.ru/microbo">
+        <meta property="twitter:title" content="MICROBO - opinionated manager for microservices.">
+        <meta property="twitter:description" content="Uses JSON files as database. Powered by Express.js, highly biased.">
+        <meta property="twitter:image" content="media/img/microbo/cover.png">
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="media/img/microbo/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="media/img/microbo/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="media/img/microbo/favicon/favicon-16x16.png">
+        <link rel="manifest" href="media/img/microbo/favicon/site.webmanifest">
+        <link rel="mask-icon" href="media/img/microbo/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="media/img/microbo/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#495464">
+        <meta name="msapplication-config" content="media/img/microbo/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Vendor -->
+        <!-- Preconnect Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <!-- ... -->
+        <!-- ... -->
+        <!-- ... -->
+
+        <!-- MICROBO Styles -->
+        <!-- Compressed -->
+        <link rel="stylesheet" type="text/css" href="{{ data.settings.microbo.path.style.file | replace('public/','') }}">
+        <!-- Inline  -->
+        <style></style>
+
+        <!-- MICROBO Scripts -->
+        <!-- Compressed -->
+        <script src="{{ data.settings.microbo.path.script.file | replace('public/','') }}" type="text/javascript"></script>
+        <!-- Inline -->
+        <script>var hash = "{{ hash }}";</script>
+    </head>
+
+    <body>
+        {% include "microbo-manager/_svg.html" %}
+        {% block content %}{% endblock %}
+    </body>
+
+</html>
+    

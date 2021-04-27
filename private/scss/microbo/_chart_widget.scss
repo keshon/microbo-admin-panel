@@ -1,0 +1,99 @@
+// Radial charts
+.radial_chart {
+	width: 40px;
+	height: 40px;
+
+	.progressbar-text {
+		font-size: 10px;
+	}
+	&:hover {
+		cursor: pointer;
+
+		.progressbar-text {
+			font-size: 0;
+		}
+		.progressbar-text:after {
+			content: '';
+			font-size: 9px;
+		}
+    }
+
+    &:nth-child(2) {
+        margin-left: 0.5rem;    
+    }
+}
+// CPU
+#chart_cpu.radial_chart {
+	&:hover {
+		.progressbar-text:after {
+			content: '%CPU';
+		}
+	}
+}
+
+// RAM
+#chart_mem.radial_chart {
+	&:hover {
+		.progressbar-text:after {
+			content: '%RAM';
+		}
+	}
+}
+
+
+// Diagram charts
+.diagram_chart {
+	margin-left: 0.75rem;
+	height: 40px;
+	width: auto;
+}
+
+div.smoothie-chart-tooltip {
+	background: #495464;
+	padding: 1em;
+	margin-top: 20px;
+	font-family: "Exo2";
+	color: #ffffff;
+	font-size: 10px;
+	pointer-events: none;
+	box-shadow: 2px 2px 1rem rgba(0,0,0,0.35);
+	z-index: 1;
+	&:before {
+		content: "Network";
+		display: block;
+	}
+	/*
+	span:nth-child(4):before {
+		color: #fd742d;
+		content: "Sent ";
+	}
+	*/
+	span:nth-child(4):after {
+		color: #fd742d;
+		content: " KB sent";
+	}
+
+	/*
+	span:nth-child(2):before {
+		color: #acc864;
+		content: "Received ";
+	}
+	*/
+	span:nth-child(2):after {
+		color: #acc864;
+		content: " KB received";
+	}
+
+	&.colorless {
+
+		span:nth-child(4):after {
+			color: #ffffff;
+			content: " KB sent";
+		}
+
+		span:nth-child(2):after {
+			color: #ffffff;
+			content: " KB received";
+		}
+	}
+}

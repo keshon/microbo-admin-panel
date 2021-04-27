@@ -1,0 +1,46 @@
+{% extends "microbo-manager/_layout.html" %}
+
+{% block content %}
+<section class="section--signin">
+    <div class="container">
+
+        <form id="signin" class="card">
+            <div class="card-body">
+
+                <div class="logo">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo_dark"></use></svg>
+                </div>
+
+                <h1 class="modal-title">Sign in to MICROBO</h1>
+
+                <div id="alert_container"></div>
+
+                <div class="form-group">
+                    <label for="inputUsername" class="sr-only">Username</label>
+                    <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                </div>
+                
+                <button class="btn btn-lg btn-primary btn-flex w-100 mt-4" type="submit"><span class="spinner-border" style="width: 1.2rem; height: 1.2rem; border-width: 0.1rem; margin-right: 0.3rem; display: none;" role="status" aria-hidden="true"></span> Sign-in</button>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+<!-- Inline Scripts -->
+<script>
+
+    // Init
+    $( document ).ready(function() {
+        // Sign-in form
+        signin();
+    });
+
+</script>
+
+{% endblock %}

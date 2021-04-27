@@ -1,0 +1,224 @@
+.dev:before {
+	content: "";
+	color: #BBBFCA;
+	background-color: $color_4;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 2px 10px;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.dev {
+	border: 2px solid $color_4;
+	position: relative;
+	padding: 25px 10px 12px 10px;
+	margin-top: 10px;
+}
+
+.dev--layout:before {
+	content: "layout";
+}
+.dev--nav:before {
+	content: "nav";
+}
+.dev--svg:before {
+	content: "svg";
+}
+.dev--content:before {
+	content: "content";
+}
+.dev--footer:before {
+	content: "footer";
+}
+
+
+/*
+    Screen Resolution Widget
+
+    # Resolutions:
+    # Desktop
+    UHD - 16:9  3840    2160 (4K UHD)
+    QHD - 16:9  2560    1440
+    FHD - 16:9	1920	1080
+    HD+ - 16:9	1600	900
+    
+    # Tablet
+    Xl - 1200
+    Lg - 992
+    Md - 768
+    Sm - 576
+
+    # Mobile
+    iPhone 6,7,8 Plus - 414
+    iPhone 6,7,8      - 375
+    iPhone 5          - 320
+    Xs                - 0
+*/
+
+body {
+    &.dev {
+        border: medium none;
+        padding: 0;
+        margin: 0;
+        &:before {
+            content: '';
+            position: fixed;
+            z-index: 99999;
+            color: white;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+            padding: 1px 6px;
+            text-transform: uppercase;
+            font-size: 8px;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+    }
+}
+
+// UHD (3840)
+@include media-breakpoint-down(uhd) { 
+    body {
+        &.dev {
+                &:before {
+                content: 'UHD';
+                background-color: mediumslateblue;
+            }
+        }
+    }
+}
+
+// QHD (2560)
+@include media-breakpoint-down(qhd) { 
+    body {
+        &.dev {
+                &:before {
+                content: 'QHD';
+                background-color: lightcoral;
+            }
+        }
+    }
+}
+
+// FHD (1920)
+@include media-breakpoint-down(fhd) { 
+    body {
+        &.dev {
+                &:before {
+                content: 'FHD';
+                background-color: darkolivegreen;
+            }
+        }
+    }
+}
+
+// HD+ (1600)
+@include media-breakpoint-down(hdplus) { 
+    body {
+        &.dev {
+                &:before {
+                content: 'hdplus';
+                background-color: brown;
+            }
+        }
+    }
+}
+
+// eXtra Large (1200px)
+@include media-breakpoint-down(xl) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'xl';
+                background-color: red;
+            }
+        }
+    }
+}
+
+// Large (992px)
+@include media-breakpoint-down(lg) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'lg';
+                background-color: violet;
+            }
+        }
+    }
+}
+
+// Medium (768px)
+@include media-breakpoint-down(md) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'md';
+                background-color: orange;
+            }
+        }
+    }
+}
+
+// Small(576px)
+@include media-breakpoint-down(sm) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'sm';
+                background-color: blue;
+            }
+        }
+    }
+}
+
+// iPhone 6,7,8 Plus (414px)
+@include media-breakpoint-down(ip678plus) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'ip678plus';
+                background-color: green;
+            }
+        }
+    }
+}
+
+// iPhone 6,7,8 (375px)
+@include media-breakpoint-down(ip678) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'ip678';
+                background-color: green;
+            }
+        }
+    }
+}
+
+// iPhone 5 (320px)
+@include media-breakpoint-down(ip5) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'ip5';
+                background-color: green;
+            }
+        }
+    }
+}
+
+// Extra small (0)
+@include media-breakpoint-down(xs) { 
+    body {
+        &.dev {
+            &:before {
+                content: 'xs';
+                background-color: green;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.dropdown-item.active {
+	background-color: $background_color_4;
+	border-color: $border_color_2;
+}
+.dropdown-item {
+	&:active {
+		background-color: $background_color_4;
+		border-color: $border_color_2;
+	}
+}
+.dropdown-menu {
+	border-radius: 0;
+	border: medium;
+	box-shadow: 2px 2px 1rem rgba(0,0,0,0.35);
+	margin: 0.5rem 0 0;
+	padding: 0;
+}
