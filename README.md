@@ -4,7 +4,7 @@ Microbo is a small admin panel built on top of ExpressJS that utilize JSON files
 It has it's own UI with JSON Editor that allows quickly manipulate json files.
 Every key-value pair is accessible via GET method or via template placeholder.
 
-![Microbo main screen](https://github.com/zorg-industries-limited/microbo-admin-panel/blob/main/misc/image.png)
+![Microbo main screen](https://github.com/zorg-industries-limited/microbo-admin-panel/blob/master/misc/image.png)
 
 ### ⚠ It's a proof-of-concept!
 It's highly recommended not to use it in **production**.
